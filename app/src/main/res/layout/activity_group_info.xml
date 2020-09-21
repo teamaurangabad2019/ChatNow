@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.GroupInfoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:id="@+id/iv_group_icon"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_group_new"
+                android:visibility="visible"/>
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="160dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+                -->
+            <LinearLayout
+                android:layout_below="@id/iv_group_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_group_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mandroid Reporting"
+                        android:textColor="#000"
+                        android:textSize="30sp"
+                        android:gravity="center_horizontal"/>
+                    <TextView
+                        android:id="@+id/tv_createdBy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Created by VinodSir 20/02/2020"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        android:gravity="center_horizontal"/>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/iv_editGroupInfo"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:src="@drawable/pencil" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_groupDescription"
+            android:textColor="@android:color/white"
+            android:background="@android:color/darker_gray"
+            android:layout_above="@+id/tv_createdBy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The desciption of the group"
+            android:padding="10dp" />
+
+
+        <!--region media recyclerview-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            android:layout_marginBottom="14dp"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/colorWhite"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/tv_mediaText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="17sp"
+                    android:text="@string/media"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginBottom="5dp" />
+
+
+                <TextView
+                    android:id="@+id/tv_mediaCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="56 >"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="5dp"
+                    />
+
+                <HorizontalScrollView
+                    android:layout_below="@+id/tv_mediaText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="700dp"
+                        android:layout_height="90dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_media"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+
+                        <ImageView
+                            android:id="@+id/iv_moreMedia"
+                            android:layout_width="80dp"
+                            android:layout_height="85dp"
+                            android:layout_toRightOf="@+id/rv_media"
+                            android:scaleType="centerCrop"
+                            android:background="@color/grey_5"
+                            android:padding="20dp"
+                            android:src="@drawable/ic_chevron_right_black_24dp"
+                            />
+
+                    </RelativeLayout>
+
+                </HorizontalScrollView>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+        <!--endregion-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:elevation="5dp"
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:background="@color/colorWhite">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mute Notification"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    />
+
+
+                <Switch
+                    android:id="@+id/switchNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_20"
+                android:layout_marginBottom="10dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_customNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Custom Notifications"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_20"
+                android:layout_marginBottom="10dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_mediaVisibility"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Media Visibility"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    />
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_20"
+                android:layout_marginBottom="10dp"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_encryption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/tv_encrypt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Encryption"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:layout_alignParentLeft="true"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_below="@+id/tv_encrypt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/encrpt_description"
+                    android:textSize="11sp"
+                    android:textColor="@color/colorBlack"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="20dp"
+                    />
+
+
+                <ImageView
+                    android:id="@+id/iv_lock"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_lock_black"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_20"
+                android:layout_marginBottom="10dp"/>
+        </LinearLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            android:layout_marginBottom="14dp"
+            android:layout_marginTop="5dp"
+            app:cardBackgroundColor="@color/colorWhite">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:id="@+id/rv_heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_participantCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="17sp"
+                        android:text="Participants"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginBottom="5dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ll_participant"
+                        android:elevation="5dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_addParticipant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Add Participant"
+                            android:padding="10dp"
+                            android:textColor="@android:color/black"
+                            android:drawableStart="@drawable/ic_person_add_black_24dp"
+                            android:drawableTint="@color/colorBlack"
+                            android:gravity="center_vertical"
+                            android:drawablePadding="10dp"
+                            android:elevation="5dp">
+
+                        </TextView>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#eee"/>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_groupMembers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rv_heading"
+                    android:clickable="true" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:background="@color/colorWhite"
+            android:elevation="8dp"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_leaveGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Leave Group"
+                    android:padding="5dp"
+                    android:textColor="@android:color/black"
+                    android:drawableStart="@drawable/ic_delete_black_24dp"
+                    android:drawableTint="@color/colorBlack"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="10dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.GroupInfoActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ll_profilePic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/border_bottom">
+
+
+                &lt;!&ndash;<ImageView
+                    android:id="@+id/iv_groupIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/ic_group_new"
+                    android:scaleType="centerCrop" />&ndash;&gt;
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true">
+
+                    <ImageView
+                        android:id="@+id/iv_pic"
+                        android:layout_width="match_parent"
+                        android:layout_height="230dp"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_group_new" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="160dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/tv_groupTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Mandroid Reporting"
+                                    android:textColor="#000"
+                                    android:textSize="30sp"
+                                    android:gravity="center_horizontal"/>
+                                <TextView
+                                    android:layout_below="@id/tv_groupTitle"
+                                    android:id="@+id/tv_groupCreatedBy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Created by VinodSir 20/02/2020"
+                                    android:textColor="#000"
+                                    android:textSize="14sp"
+                                    android:gravity="center_horizontal"/>
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:id="@+id/iv_changeGroupName"
+                                    android:layout_width="24dp"
+                                    android:layout_height="24dp"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginBottom="20dp"
+                                    android:src="@drawable/pencil" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    &lt;!&ndash;<TextView
+                        android:id="@+id/tv_groupTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mandroid Reporting"
+                        android:layout_marginTop="160dp"
+                        android:textColor="#000"
+                        android:textSize="30sp"
+                        android:gravity="center_horizontal"/>
+                    <TextView
+                        android:layout_below="@id/tv_groupTitle"
+                        android:id="@+id/tv_groupCreatedBy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Created by VinodSir 20/02/2020"
+                        android:textColor="#000"
+                        android:textSize="14sp"
+                        android:gravity="center_horizontal"/>&ndash;&gt;
+
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="10dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:text="Add group description"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_groupSettings"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_top_bottom"
+                android:layout_below="@id/ll_profilePic">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mute notification"
+                    android:padding="10dp"
+                    android:textSize="16sp"
+                    android:background="@drawable/border_bottom"
+                    android:textColor="@android:color/black"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Custom notification"
+                    android:padding="10dp"
+                    android:textSize="16sp"
+                    android:background="@drawable/border_bottom"
+                    android:textColor="@android:color/black"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Media visibility"
+                    android:padding="10dp"
+                    android:textSize="16sp"
+                    android:background="@drawable/border_bottom"
+                    android:textColor="@android:color/black"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Encryption"
+                    android:padding="10dp"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_groupMembers"
+                android:layout_width="match_parent"
+                android:layout_below="@id/ll_groupSettings"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_groupMembers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ll_exitGroup"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/ll_groupMembers"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Exit group"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:padding="10dp"
+                    android:background="@drawable/border_top_bottom"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ll_reportGroup"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/ll_exitGroup"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Report group"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    android:padding="10dp"
+                    android:background="@drawable/border_top_bottom"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>-->

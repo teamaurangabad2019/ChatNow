@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MediaListActivity">
+
+        <!--region Toolbar Region-->
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-8dp"
+                android:background="@color/colorPrimary"
+                android:gravity="top">
+
+                <RelativeLayout
+                    android:id="@+id/originalToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_10"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/img_back"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/ic_arrow_back_black_24dp"
+                        android:backgroundTint="@color/colorWhite" />
+
+                    <TextView
+                        android:id="@+id/txtTitleBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/img_back"
+                        android:layout_centerVertical="true"
+                        android:text=""
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/toolbarText" />
+
+
+                    <ImageView
+                        android:id="@+id/img_map"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="@dimen/padding_10"
+                        android:background="@drawable/ic_gps_fixed"
+                        android:layout_alignParentRight="true"
+                        android:visibility="gone"/>
+
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+        <!--endregion-->
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            app:tabTextColor="@color/colorBlack"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            android:layout_below="@+id/appBarLayout"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tabLayout">
+
+            <!-- View pager to swipe views -->
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+

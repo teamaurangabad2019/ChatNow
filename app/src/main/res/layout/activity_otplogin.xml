@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sv_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.OTPLoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--otp login section-->
+        <RelativeLayout
+            android:id="@+id/layoutOTP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="visible">
+
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/ic_search" />
+
+            <EditText
+                android:id="@+id/txt_mobile_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/editbackground"
+                android:drawableLeft="@drawable/ic_phone"
+                android:drawablePadding="2dp"
+                android:hint=" Phone Number"
+                android:inputType="number"
+                android:maxLength="10"
+                android:padding="10dp"
+                android:layout_below="@+id/iv_logo"/>
+
+
+            <EditText
+                android:id="@+id/et_otp"
+                android:layout_below="@+id/iv_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/editbackground"
+                android:drawablePadding="2dp"
+                android:hint=" Get OTP"
+                android:inputType="textVisiblePassword"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_get_otp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/get_otp"
+                android:fontFamily="sans-serif-black"
+                android:text="Get OTP"
+                android:layout_below="@+id/txt_mobile_number"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp" />
+
+
+            <Button
+                android:id="@+id/btn_continue"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/submit"
+                android:fontFamily="sans-serif-black"
+                android:text="Continue"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+        <!--otp login section end-->
+
+
+        <!--otp verification section-->
+        <RelativeLayout
+            android:id="@+id/layoutVerify"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/rl_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@drawable/gradient" />
+
+                <RelativeLayout
+                    android:id="@+id/rel_sing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp">
+
+                    <ImageButton
+                        android:id="@+id/imgb_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_arrow_back_black_24dp"
+                        android:tint="@color/colorWhite"/>
+
+                    <TextView
+                        android:id="@+id/tv_sign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Sign Up - Step 2/2"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="240dp">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_verifyy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:text="VERIFY MOBILE NUMBER"
+                                android:textColor="#000000"
+                                android:textSize="20dp" />
+
+
+                            <TextView
+                                android:id="@+id/tv_otp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="20dp"
+                                android:layout_below="@+id/tv_verifyy"
+                                android:text="OTP has been sent to you on your \n mobile number. Please enter it below."
+                                android:textAlignment="center" />
+
+                            <LinearLayout
+                                android:id="@+id/ll_otp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_otp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <com.chaos.view.PinView
+                                    android:id="@+id/txt_OTP"
+                                    style="@style/PinWidget.PinView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:cursorVisible="true"
+                                    android:hint="Hint."
+                                    android:inputType="number"
+                                    android:padding="10dp"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    app:cursorColor="@color/colorAccent"
+                                    app:cursorWidth="2dp"
+                                    app:hideLineWhenFilled="true"
+                                    app:itemCount="6"
+                                    app:itemHeight="48dp"
+                                    app:itemRadius="4dp"
+                                    app:itemSpacing="0dp"
+                                    app:itemWidth="48dp"
+                                    app:lineColor="@color/colorPrimary"
+                                    app:lineWidth="2dp"
+                                    app:viewType="rectangle" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_didnt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/ll_otp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Didn\'t receive otp?"
+                                android:textColor="#000000" />
+
+                            <LinearLayout
+                                android:id="@+id/btnLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_didnt"
+                                android:weightSum="2"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginRight="14dp"
+                                android:layout_marginTop="20dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingRight="20dp"
+                                    android:gravity="center">
+
+                                    <Button
+                                        android:id="@+id/btn_confirm"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/colorAccent"
+                                        android:padding="10dp"
+                                        android:text="Verify"
+                                        android:textColor="@color/colorWhite" />
+
+                                    <!-- <Button
+                                         android:id="@+id/btn_resend_otp"
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:background="@drawable/gradient"
+                                         android:padding="10dp"
+                                         android:text="Resend in 30"
+                                         android:textColor="@color/colorWhite" />-->
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center">
+
+                                    <Button
+                                        android:id="@+id/change_number"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/colorAccent"
+                                        android:padding="10dp"
+                                        android:text="Change Number"
+                                        android:textColor="@color/colorWhite" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!--   <Button
+                                   android:id="@+id/btn_confirm"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:layout_below="@+id/btnLayout"
+                                   android:layout_centerHorizontal="true"
+                                   android:layout_margin="20dp"
+                                   android:background="@drawable/gradient"
+                                   android:padding="10dp"
+                                   android:text="Verify"
+                                   android:textColor="@color/colorWhite" />-->
+
+                        </RelativeLayout>
+                    </ScrollView>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+        <!--otp verification section end-->
+
+
+        <!--region progress bar-->
+        <LinearLayout
+            android:id="@+id/lyt_progress_reg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_marginTop="150dp"
+            android:visibility="gone"
+            android:background="@color/grey_3"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_progress_employees"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:text="Loading...."
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <ProgressBar
+                android:id="@+id/progress_employees"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:indeterminate="true" />
+
+        </LinearLayout>
+        <!--end-->
+    </RelativeLayout>
+
+</ScrollView>
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:facebook="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/sv_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.OTPLoginActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        &lt;!&ndash;otp login section&ndash;&gt;
+        <RelativeLayout
+            android:id="@+id/layoutOTP"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="visible">
+
+
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_search" />
+
+            <EditText
+                android:id="@+id/txt_mobile_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/editbackground"
+                android:drawableLeft="@drawable/ic_phone"
+                android:drawablePadding="2dp"
+                android:hint=" Phone Number"
+                android:inputType="number"
+                android:maxLength="10"
+                android:padding="10dp"
+                android:layout_below="@+id/iv_logo"/>
+
+
+            <EditText
+                android:id="@+id/et_otp"
+                android:layout_below="@+id/iv_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/editbackground"
+                android:drawablePadding="2dp"
+                android:hint=" Get OTP"
+                android:inputType="textVisiblePassword"
+                android:padding="10dp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_get_otp"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/get_otp"
+                android:fontFamily="sans-serif-black"
+                android:text="Get OTP"
+                android:layout_below="@+id/txt_mobile_number"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp" />
+
+
+            <Button
+                android:id="@+id/btn_continue"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/submit"
+                android:fontFamily="sans-serif-black"
+                android:text="Continue"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp"
+                android:visibility="gone" />
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/btn_get_otp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="60dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OR "
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign in with"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="50dp"
+                    android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/iv_emailPassword"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_gmail"
+                    android:scaleType="fitXY"
+                    android:layout_marginRight="25dp"
+                    />
+
+
+                    <ImageView
+                        android:id="@+id/iv_google"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_google"
+                        android:layout_marginRight="25dp"
+                        />
+
+                    <FrameLayout
+                        android:id="@+id/rl_facebook"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.facebook.login.widget.LoginButton
+                            android:id="@+id/btn_fbLogin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/iv_facebook"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:src="@drawable/ic_facebook"
+                            />
+
+                    </FrameLayout>
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+        &lt;!&ndash;otp login section end&ndash;&gt;
+
+
+        &lt;!&ndash;otp verification section&ndash;&gt;
+        <RelativeLayout
+            android:id="@+id/layoutVerify"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/rl_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:background="@drawable/gradient" />
+
+                <RelativeLayout
+                    android:id="@+id/rel_sing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp">
+
+                    <ImageButton
+                        android:id="@+id/imgb_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="10dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_arrow_back_black_24dp"
+                        android:tint="@color/colorWhite"/>
+
+                    <TextView
+                        android:id="@+id/tv_sign"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="Sign Up - Step 2/2"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rel_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="240dp">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_verifyy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="10dp"
+                                android:text="VERIFY MOBILE NUMBER"
+                                android:textColor="#000000"
+                                android:textSize="20dp" />
+
+
+                            <TextView
+                                android:id="@+id/tv_otp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="20dp"
+                                android:layout_below="@+id/tv_verifyy"
+                                android:text="OTP has been sent to you on your \n mobile number. Please enter it below."
+                                android:textAlignment="center" />
+
+                            <LinearLayout
+                                android:id="@+id/ll_otp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_otp"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <com.chaos.view.PinView
+                                    android:id="@+id/txt_OTP"
+                                    style="@style/PinWidget.PinView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:cursorVisible="true"
+                                    android:hint="Hint."
+                                    android:inputType="number"
+                                    android:padding="10dp"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    app:cursorColor="@color/colorAccent"
+                                    app:cursorWidth="2dp"
+                                    app:hideLineWhenFilled="true"
+                                    app:itemCount="6"
+                                    app:itemHeight="48dp"
+                                    app:itemRadius="4dp"
+                                    app:itemSpacing="0dp"
+                                    app:itemWidth="48dp"
+                                    app:lineColor="@color/colorPrimary"
+                                    app:lineWidth="2dp"
+                                    app:viewType="rectangle" />
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_didnt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/ll_otp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Didn\'t receive otp?"
+                                android:textColor="#000000" />
+
+                            <LinearLayout
+                                android:id="@+id/btnLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_didnt"
+                                android:weightSum="2"
+                                android:layout_marginLeft="14dp"
+                                android:layout_marginRight="14dp"
+                                android:layout_marginTop="20dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:paddingRight="20dp"
+                                    android:gravity="center">
+
+                                    <Button
+                                        android:id="@+id/btn_confirm"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/colorAccent"
+                                        android:padding="10dp"
+                                        android:text="Verify"
+                                        android:textColor="@color/colorWhite" />
+
+                                    &lt;!&ndash; <Button
+                                         android:id="@+id/btn_resend_otp"
+                                         android:layout_width="wrap_content"
+                                         android:layout_height="wrap_content"
+                                         android:background="@drawable/gradient"
+                                         android:padding="10dp"
+                                         android:text="Resend in 30"
+                                         android:textColor="@color/colorWhite" />&ndash;&gt;
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center">
+
+                                    <Button
+                                        android:id="@+id/change_number"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/colorAccent"
+                                        android:padding="10dp"
+                                        android:text="Change Number"
+                                        android:textColor="@color/colorWhite" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            &lt;!&ndash;   <Button
+                                   android:id="@+id/btn_confirm"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:layout_below="@+id/btnLayout"
+                                   android:layout_centerHorizontal="true"
+                                   android:layout_margin="20dp"
+                                   android:background="@drawable/gradient"
+                                   android:padding="10dp"
+                                   android:text="Verify"
+                                   android:textColor="@color/colorWhite" />&ndash;&gt;
+
+                        </RelativeLayout>
+                    </ScrollView>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+        &lt;!&ndash;otp verification section end&ndash;&gt;
+
+
+        &lt;!&ndash;region progress bar&ndash;&gt;
+        <LinearLayout
+            android:id="@+id/lyt_progress_reg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:layout_marginTop="150dp"
+            android:visibility="gone"
+            android:background="@color/grey_3"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_progress_employees"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:text="Loading...."
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <ProgressBar
+                android:id="@+id/progress_employees"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:indeterminate="true" />
+
+        </LinearLayout>
+        &lt;!&ndash;end&ndash;&gt;
+        </RelativeLayout>
+
+    </ScrollView>
+    -->

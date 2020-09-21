@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.ProfileEditActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/iv_backprofile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:tint="@color/colorWhite"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:gravity="center_vertical"
+            android:text="Edit Profile "
+            android:textColor="@color/colorWhite"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:background="@color/colorPrimary">
+
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="128dp"
+                android:layout_height="127dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_pic"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/male_avatar" />
+
+                <ImageView
+                    android:id="@+id/iv_pedit"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="85dp"
+                    android:layout_marginTop="95dp"
+                    android:src="@drawable/pencil" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="160dp"
+                android:orientation="vertical"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp">
+
+                <!--Fullname-->
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_person_black_24dp"
+                    android:gravity="center_vertical"
+                    android:drawablePadding="10dp"
+                    android:inputType="text"
+                    android:hint="Name"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp" />
+                <!--End-->
+
+                <EditText
+                    android:id="@+id/et_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/mobile"
+                    android:drawableTint="@color/colorPrimary"
+                    android:drawablePadding="10dp"
+                    android:hint="Contact"
+                    android:maxLength="10"
+                    android:gravity="center_vertical"
+                    android:inputType="number"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/ic_email_black_24dp"
+                    android:drawableTint="@color/colorPrimary"
+                    android:drawablePadding="10dp"
+                    android:hint="Email"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    android:inputType="textEmailAddress"/>
+
+                <EditText
+                    android:id="@+id/et_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:drawableLeft="@drawable/ic_location_on_black_24dp"
+                    android:drawableTint="@color/colorPrimary"
+                    android:drawablePadding="10dp"
+                    android:hint="Address"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="14sp"
+                    android:inputType="text"/>
+
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:background="@drawable/button_background"
+                    android:text="Submit"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="15dp"
+                    android:layout_marginBottom="20dp"/>
+
+
+            </LinearLayout>
+
+
+            <!--region progress bar-->
+            <LinearLayout
+                android:id="@+id/lyt_progress_reg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:layout_marginTop="150dp"
+                android:visibility="gone"
+                android:background="@color/grey_3"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_progress_employees"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:text="Loading...."
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/colorPrimaryDark" />
+
+                <ProgressBar
+                    android:id="@+id/progress_employees"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true" />
+
+            </LinearLayout>
+
+            <!--end-->
+
+
+        </RelativeLayout>
+
+
+
+    </ScrollView>
+
+</LinearLayout>

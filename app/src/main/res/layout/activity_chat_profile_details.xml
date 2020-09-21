@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_5"
+    tools:context=".activities.ChatProfileDetailsActivity">
+
+    <!--region profile pic Region-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/collapsing_toolbar_appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.SubtitleCollapsingToolbarLayout
+            android:id="@+id/subtitlecollapsingtoolbarlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:contentScrim="?colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:title="Name"
+            app:expandedTitleTextAppearance="@color/colorWhite"
+            >
+
+            <ImageView
+                android:id="@+id/iv_profile"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:src="@drawable/ic_account_circle"
+                android:scaleType="fitCenter"
+                />
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:layout_collapseMode="pin"/>
+        </com.google.android.material.appbar.SubtitleCollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!--endregion-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!--region media recyclerview-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="5dp"
+                android:layout_marginBottom="14dp"
+                android:layout_marginTop="5dp"
+                app:cardBackgroundColor="@color/colorWhite"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/tv_mediaText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="17sp"
+                        android:text="@string/media"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginBottom="5dp"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/tv_mediaCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="56 >"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="5dp"
+                        />
+
+                    <HorizontalScrollView
+                        android:layout_below="@+id/tv_mediaText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="700dp"
+                            android:layout_height="90dp">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rv_media"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"/>
+
+                            <ImageView
+                                android:id="@+id/iv_moreMedia"
+                                android:layout_width="80dp"
+                                android:layout_height="85dp"
+                                android:layout_toRightOf="@+id/rv_media"
+                                android:scaleType="centerCrop"
+                                android:background="@color/grey_5"
+                                android:padding="20dp"
+                                android:src="@drawable/ic_chevron_right_black_24dp"
+                                />
+
+                        </RelativeLayout>
+
+                    </HorizontalScrollView>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <!--endregion-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:elevation="8dp"
+                android:padding="8dp"
+                android:orientation="vertical"
+                android:background="@color/colorWhite">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mute Notification"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorBlack"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        />
+
+
+                    <Switch
+                        android:id="@+id/switchNotification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey_20"
+                    android:layout_marginBottom="10dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_customNotification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Custom Notifications"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorBlack"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey_20"
+                    android:layout_marginBottom="10dp"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_mediaVisibility"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Media Visibility"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorBlack"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey_20"
+                    android:layout_marginBottom="10dp"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_encryption"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_encrypt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Encryption"
+                        android:textSize="14sp"
+                        android:textColor="@color/colorBlack"
+                        android:layout_alignParentLeft="true"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_description"
+                        android:layout_below="@+id/tv_encrypt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/encrpt_description"
+                        android:textSize="11sp"
+                        android:textColor="@color/colorBlack"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginRight="20dp"
+                        />
+
+
+                    <ImageView
+                        android:id="@+id/iv_lock"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_lock_black"
+                        />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey_20"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:elevation="8dp"
+            android:padding="8dp"
+            android:orientation="vertical"
+            android:background="@color/colorWhite">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About"
+                    android:textSize="17sp"
+                    android:textColor="@color/colorBlack"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true" />
+
+
+                <TextView
+                    android:id="@+id/tv_about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorBlack"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey_20"
+                android:layout_marginBottom="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:elevation="8dp"
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:background="@color/colorWhite"
+            android:layout_marginRight="10dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_not_interested"
+                android:tint="@color/colorRed" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Block"
+                    android:textSize="17sp"
+                    android:textColor="@color/colorRed"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true" />
+
+        </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_report"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:elevation="8dp"
+                android:padding="8dp"
+                android:orientation="horizontal"
+                android:background="@color/colorWhite"
+                >
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_thumbs_down"
+                    android:tint="@color/colorRed"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Report Contact"
+                    android:textSize="17sp"
+                    android:textColor="@color/colorRed"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

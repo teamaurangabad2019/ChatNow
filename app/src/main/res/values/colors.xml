@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#232C53</color>
+    <color name="colorPrimaryDark">#232C53</color>
+    <color name="colorAccent">#4BAF4C</color>
+
+    <color name="colorwhite">#ffffff</color>
+
+    <!-- <color name="colorPrimary">#c64036</color>
+    <color name="colorPrimaryDark">#9b2b29</color>
+    <color name="colorAccent">#D81B60</color>-->
+
+    <color name="colorRed">#D12626</color>
+
+    <color name="colorShade1">#ffffff</color>
+    <color name="colorBackgroundHomePage">#c2c3c3</color>
+    <color name="colorShade2">#ffffff</color>
+    <color name="colorShade3">#ffffff</color>
+    <color name="coloricon">#000000</color>
+    <color name="colorlivenow">#c64036</color>
+    <color name="colorlivetext">#ffffff</color>
+
+
+    <color name="colorblacktranspa">#C6000000</color>
+
+    <color name="colorGreen">#5ab256</color>
+    <color name="colorYellow">#c64036</color>
+
+    <color name="colorGrey">#696969</color>
+    <color name="colorTextYellow">#c64036</color>
+
+    <!--
+        <color name="colorYellow">#AB47BC</color>
+        <color name="colorGrey">#696969</color>
+        <color name="colorTextYellow">#AB47BC</color>
+
+        -->
+    <color name="transparent_white">#54CCCCCC</color>
+
+    <color name="background">#dddddd</color>
+    <color name="backgroundBlack">#232E32</color>
+
+    <color name="colorTextWhite">#fffefe</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#123</color>
+    <color name="colorView">#c2c3c3</color>
+
+    <color name="colorTest1">#2B519A</color>
+    <color name="colorTest2">#0D2352</color>
+    <color name="colorTest3">#19214B</color>
+
+    <color name="grey_3">#f7f7f7</color>
+    <color name="grey_5">#f2f2f2</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="grey_20">#cccccc</color>
+    <color name="grey_40">#999999</color>
+    <color name="grey_60">#666666</color>
+    <color name="grey_80">#37474F</color>
+    <color name="grey_90">#263238</color>
+    <color name="grey_455">#3a4a53</color>
+
+    <color name="light_blue_50">#E1F5FE</color>
+    <color name="light_blue_100">#B3E5FC</color>
+    <color name="light_blue_200">#81D4FA</color>
+    <color name="light_blue_300">#4FC3F7</color>
+    <color name="light_blue_400">#29B6F6</color>
+    <color name="light_blue_500">#03A9F4</color>
+    <color name="light_blue_600">#039BE5</color>
+    <color name="light_blue_700">#0288D1</color>
+    <color name="light_blue_800">#0277BD</color>
+    <color name="light_blue_900">#01579B</color>
+    <color name="light_blue_A100">#80D8FF</color>
+    <color name="light_blue_A200">#40C4FF</color>
+    <color name="light_blue_A400">#00B0FF</color>
+    <color name="light_blue_A700">#0091EA</color>
+
+
+    <color name="ColorFeesF">#179f85</color>
+    <color name="ColorFeesD">#c23829</color>
+    <color name="ColorFeesT">#287fb6</color>
+
+    <color name="ColorTestT">#2d3e50</color>
+    <color name="ColorTestO">#456ab3</color>
+    <color name="ColorTestP">#009973</color>
+    <color name="ColorTestR">#1d824d</color>
+
+    <color name="overlay_dark_10">#1A000000</color>
+    <color name="overlay_dark_20">#33000000</color>
+    <color name="overlay_dark_30">#4D000000</color>
+    <color name="overlay_dark_40">#66000000</color>
+    <color name="overlay_dark_50">#80000000</color>
+    <color name="overlay_dark_60">#99000000</color>
+    <color name="overlay_dark_70">#B3000000</color>
+    <color name="overlay_dark_80">#CC000000</color>
+    <color name="overlay_dark_90">#E6000000</color>
+
+    <color name="overlay_light_10">#1AFFFFFF</color>
+    <color name="overlay_light_20">#33FFFFFF</color>
+    <color name="overlay_light_30">#4DFFFFFF</color>
+    <color name="overlay_light_40">#66FFFFFF</color>
+    <color name="overlay_light_50">#8FFFFFF0</color>
+    <color name="overlay_light_60">#99FFFFFF</color>
+    <color name="overlay_light_70">#B3FFFFFF</color>
+    <color name="overlay_light_80">#CCFFFFFF</color>
+    <color name="overlay_light_90">#E6FFFFFF</color>
+
+    <color name="color_fb_dark">#759CE7</color>
+    <color name="color_navi_blue">#03405d</color>
+    <color name="colorOrange">#ee8e12</color>
+    <color name="color_fb_faint">#5ABBFF</color>
+
+    <color name="colorCorrectQue">#90EE90</color>
+
+
+    <color name="colorWrongQue">#FA8072</color>
+    <color name="colorUnattempQue">#c2c3c3</color>
+
+    <!--***App Colors***-->
+    <color name="logoBlue">#0E52A0</color>
+    <color name="logoRed">#D74123</color>
+    <color name="colorBackground">#F1F1F1</color>
+
+
+    <color name="sampleDark">#1B5E20</color>
+    <color name="sampleLight">#388E3C</color>
+    <color name="sampleLighter">#4CAF50</color>
+
+    <color name="dialogAccent">#795548</color>
+
+    <color name="titleTextColor">#FFFFFF</color>  <!--title and back button-->
+    <color name="titleTabColor">#FFFFFF</color> <!--Unselected image/video tab title-->
+    <color name="titleSelectedTabColor">#4BAF4C</color>  <!--Selected image/video tab title!-->
+
+</resources>

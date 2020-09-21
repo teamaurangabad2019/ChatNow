@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!-- region layout left link text-->
+
+    <LinearLayout
+        android:id="@+id/ll_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/border_all_sides"
+        android:visibility="visible">
+
+        <io.github.ponnamkarthik.richlinkpreview.RichLinkView
+            android:id="@+id/richLinkView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="some link">
+        </io.github.ponnamkarthik.richlinkpreview.RichLinkView>
+
+    </LinearLayout>
+    <!--endregion-->
+
+
+</LinearLayout>

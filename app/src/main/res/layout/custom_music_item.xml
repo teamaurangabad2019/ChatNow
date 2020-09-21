@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="@color/white">
+
+
+    <ImageView
+        android:id="@+id/ivMusic"
+        android:src="@drawable/ic_audiotrack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:tint="@color/colorAccent"
+        android:layout_alignTop="@+id/ivStop" />
+
+    <TextView
+        android:id="@+id/txtName"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="14sp"
+        android:text="Song name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/ivMusic"
+        android:layout_toLeftOf="@+id/ivPlay"
+        android:layout_alignLeft="@+id/txtSinger"
+        android:padding="5dp"
+        android:layout_alignStart="@+id/txtSinger" />
+
+    <TextView
+        android:id="@+id/txtSinger"
+        android:textColor="#259e06"
+        android:textSize="18sp"
+        android:text="Singer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_alignBottom="@+id/ivMusic"
+        android:layout_toRightOf="@+id/ivMusic"
+        android:layout_toEndOf="@+id/ivMusic"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/ivPlay"
+        android:layout_marginTop="15dp"
+        android:layout_toLeftOf="@id/ivStop"
+        android:src="@drawable/ic_play"
+        android:tint="@color/grey_40"
+        android:layout_width="25dp"
+        android:layout_height="25dp" />
+
+    <ImageView
+        android:id="@+id/ivStop"
+        android:layout_marginTop="15dp"
+        android:src="@android:drawable/ic_notification_clear_all"
+        android:layout_alignParentRight="true"
+        android:layout_width="25dp"
+        android:tint="@color/colorRed"
+        android:layout_height="25dp" />
+
+</RelativeLayout>

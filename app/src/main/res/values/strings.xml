@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">ChatNow</string>
+    <string name="history">History</string>
+
+
+    <string name="share_app">Share App</string>
+    <string name="settings">Settings</string>
+    <string name="invite">Invite</string>
+    <string name="text_title">Invite</string>
+    <string name="text_description">Invite</string>
+
+    <string name="share_app_link">https://www.google.com</string>
+
+
+    <string name="harassment">Harassment</string>
+    <string name="fire">Fire</string>
+    <string name="robbery">Robbery</string>
+    <string name="critical_condition">Critical Case</string>
+    <string name="contactus">Contact Us</string>
+    <string name="logout">Logout</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="back"><![CDATA[<]]></string>
+    <string name="rewind"><![CDATA[<<]]></string>
+    <string name="forward"><![CDATA[>>]]></string>
+    <string name="pause">||</string>
+    <string name="media">Media, Links and docs</string>
+    <string name="encrpt_description">Message to this chat and calls are secured with end-to-end encryption. Tap to verify.</string>
+
+
+    <string-array name="distance">
+        <item>30</item>
+        <item>50</item>
+        <item>100</item>
+    </string-array>
+
+    <!--<string name="facebook_app_id">218004426291831</string>
+    <string name="fb_login_protocol_scheme">fb218004426291831</string>-->
+
+    <string name="facebook_app_id">597940197520656</string>
+    <string name="fb_login_protocol_scheme">fb597940197520656</string>
+
+
+</resources>

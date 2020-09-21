@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DetailsChattingActivity">
+
+    <!--region Toolbar Start-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:elevation="8dp"
+        android:gravity="top">
+
+        <RelativeLayout
+            android:id="@+id/originalToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="-8dp">
+
+            <ImageView
+                android:id="@+id/viewMenuIconBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_arrow_back_black_24dp"
+                android:tint="@color/colorWhite" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/viewMenuIconBack"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@+id/civ_profile"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+                        android:id="@+id/txtTitleName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Customer Name"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Online"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp"
+                        android:paddingLeft="4dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:weightSum="3"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/iv_star"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_star_black"
+                        />
+
+                    <ImageView
+                        android:id="@+id/iv_forward"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_forward"
+                        />
+
+                    <ImageView
+                        android:id="@+id/iv_more"
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_more_vert"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <!--endregion-->
+
+    <!--region middle-->
+    <RelativeLayout
+        android:id="@+id/rl_midle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_editMsg"
+        android:layout_below="@+id/toolbar"
+        android:orientation="vertical"
+        android:background="@drawable/gradient">
+
+        <!--region imageview-->
+
+            <com.jsibbold.zoomage.ZoomageView
+                android:id="@+id/iv_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:zoomage_restrictBounds="false"
+                app:zoomage_animateOnReset="true"
+                app:zoomage_autoResetMode="UNDER"
+                app:zoomage_autoCenter="true"
+                app:zoomage_zoomable="true"
+                app:zoomage_translatable="true"
+                app:zoomage_minScale="0.6"
+                app:zoomage_maxScale="8"
+                />
+        <!--endregion-->
+
+        <!--region video-->
+        <VideoView
+            android:id="@+id/vv_video"
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            >
+
+        </VideoView>
+        <!--endregion-->
+
+
+        <!--region audio-->
+        <LinearLayout
+            android:id="@+id/ll_audio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+
+
+            <SeekBar
+                android:id="@+id/seekbar"
+                android:layout_margin="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@android:drawable/ic_media_play"
+                android:text="PLAY SOUND" />
+
+
+            <!--
+                        <SurfaceView
+                            android:id="@+id/playerView"
+                            android:layout_width="360px"
+                            android:layout_height="610px"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:text="Hello World!" />
+
+
+                        <SeekBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/seekBar"
+                            android:layout_above="@+id/ll_buttomBtn" />
+
+                        <LinearLayout
+                            android:id="@+id/ll_buttomBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_alignParentBottom="true"
+                            android:weightSum="4">
+
+                            <Button
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/forward"
+                                android:id="@+id/btn_forword"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true" />
+
+                            <Button
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/pause"
+                                android:id="@+id/btn_pause"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignLeft="@+id/imageView"
+                                android:layout_alignStart="@+id/imageView" />
+
+                            <Button
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/back"
+                                android:id="@+id/btn_back"
+                            />
+
+                            <Button
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="@string/rewind"
+                                android:id="@+id/btn_rewind"
+                               />
+
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Small Text"
+                            android:id="@+id/tv_left"
+                            android:layout_alignParentLeft="true"
+                            android:layout_above="@+id/seekBar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:text="Small Text"
+                            android:id="@+id/tv_right"
+                            android:layout_above="@+id/seekBar"
+                            android:layout_alignParentRight="true"
+                          />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:text="Medium Text"
+                            android:id="@+id/tv_middle"
+                            android:layout_toLeftOf="@+id/tv_right"
+                            android:layout_toRightOf="@+id/tv_left"
+                            android:layout_centerHorizontal="true" />
+            -->
+        </LinearLayout>
+        <!--endregion-->
+
+    </RelativeLayout>
+    <!--endregion-->
+
+    <!--region buttom layout-->
+    <RelativeLayout
+        android:id="@+id/rl_editMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="5dp"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryDark">
+
+      <TextView
+          android:id="@+id/tv_hint"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="12sp"
+          android:textStyle="bold"
+          android:text="txt"
+          android:gravity="center"
+          android:textColor="@color/colorWhite"
+          />
+
+    </RelativeLayout>
+
+    <!--endregion-->
+
+</RelativeLayout>

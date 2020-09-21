@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="1dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginBottom="2dp"
+    android:id="@+id/ll_trainer">
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:id="@+id/tv_settingsName"
+            android:text="some text"
+            android:textColor="@color/colorBlack"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_settingsDescription"
+            android:text="some text"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:textColor="@color/colorGrey"
+            android:textSize="12dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_checkbox"
+        android:layout_width="50dp"
+        android:padding="5dp"
+        android:layout_height="match_parent">
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+
+

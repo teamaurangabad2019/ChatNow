@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/createGroup"
+        android:title="Create New Group"
+        app:showAsAction="never"
+        />
+
+    <item android:id="@+id/itemProfile"
+        app:showAsAction="never"
+        android:title="View Profile"/>
+
+    <item android:id="@+id/itemMedia"
+        app:showAsAction="never"
+        android:title="Media, Links and Docs"/>
+
+
+    <item android:id="@+id/itemSearch"
+        app:showAsAction="never"
+        android:title="Search"/>
+
+    <item android:id="@+id/itemReport"
+        app:showAsAction="never"
+        android:title="Report"/>
+
+    <item android:id="@+id/itemBlock"
+        app:showAsAction="never"
+        android:title="Block"/>
+
+
+    <item android:id="@+id/itemUnBlock"
+        app:showAsAction="never"
+        android:title="UnBlock"/>
+
+    <item android:id="@+id/itemClearChat"
+        app:showAsAction="never"
+        android:title="Clear Chat"/>
+</menu>
